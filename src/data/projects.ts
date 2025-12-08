@@ -1,5 +1,6 @@
 import favStoreImg from '../assets/favStore.jpeg';
 import ahorcadoImg from '../assets/ahorcado.jpeg';
+import raffataImg from '../assets/RaffataImg.jpeg';
 
 export interface Project {
   id: string;
@@ -29,5 +30,14 @@ export const projects: Project[] = [
     image: ahorcadoImg,
     tags: ['React', 'TailwindCSS','TypeScript', 'Responsive'],
     website: 'https://cfc-ahorcado.vercel.app'
+  },
+   {
+    id: '3',
+    title: 'Raffata Pizzas',
+    type: 'Juego online',
+    description: 'Landing page para Raffata Pizza. Incluye menú dinámico, galería, sección “Sobre nosotros” e integración con WhatsApp. Un proyecto centrado en diseño minimalista y performance, ideal para negocios gastronómicos.',
+    image: raffataImg,
+    tags: ['React', 'TailwindCSS','TypeScript', 'Responsive'],
+    website: 'https://raffata.vercel.app/'
   }
 ];

@@ -9,19 +9,21 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="pt-16 md:pt-20 min-h-screen flex items-center bg-gradient-to-b from-white to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 md:space-y-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-soft-black leading-tight">
+   <section id="hero" className="py-12 md:py-15 flex items-center bg-white">
+
+      {/* Quitamos padding excesivo en mobile */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-4 md:space-y-8">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-soft-black leading-tight">
               Desarrollo sitios web simples, rápidos y económicos
             </h1>
-            <p className="text-lg md:text-xl text-steel-gray leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-steel-gray leading-relaxed">
               Soluciones web profesionales para emprendedores y pequeños negocios que buscan presencia digital efectiva.
             </p>
             <button
               onClick={scrollToProjects}
-              className="inline-flex items-center gap-2 bg-primary-dark text-white px-8 py-4 rounded-lg hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-medium"
+              className="inline-flex items-center gap-2 bg-primary-dark text-white px-6 py-3 rounded-lg hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-medium"
             >
               Ver proyectos
               <ArrowDown size={20} />
@@ -36,8 +38,8 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-dark rounded-3xl -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-3xl -z-10"></div>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 bg-primary-dark rounded-3xl -z-10"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 md:w-32 md:h-32 bg-primary/10 rounded-3xl -z-10"></div>
           </div>
         </div>
       </div>
@@ -46,3 +48,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
