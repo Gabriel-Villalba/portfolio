@@ -53,7 +53,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-8 md:p-10 space-y-6 border border-primary/10">
+        <form onSubmit={handleSubmit} className="bg-green-100 rounded-2xl shadow-lg p-8 md:p-10 space-y-6 border border-primary/10">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-soft-black mb-2">
               Nombre

@@ -36,12 +36,17 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
-          <button
-            onClick={() => scrollToSection('hero')}
-            className="text-xl md:text-2xl font-bold text-primary-dark hover:text-primary transition-colors"
-          >
-            Gabriel Villalba · Fullstack Developer
-          </button>
+         <button
+              onClick={() => scrollToSection('hero')}
+              className="text-xl md:text-2xl font-bold text-primary-dark hover:text-primary transition-colors"
+>
+              {/* Versión corta para móviles */}
+              <span className="block md:hidden">G.V. Fullstack Developer</span>
+  
+              {/* Versión larga para pantallas medianas en adelante */}
+              <span className="hidden md:block">Gabriel Villalba · Fullstack Developer</span>
+        </button>
+
 
           <div className="hidden md:flex space-x-8">
             {menuItems.map((item) => (

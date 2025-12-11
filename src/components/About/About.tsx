@@ -39,7 +39,7 @@ const About = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex gap-4 p-6 bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors duration-300"
+                className="flex gap-4 p-6 bg-green-100 rounded-xl hover:bg-primary/10 transition-colors duration-300"
               >
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-primary-dark rounded-lg flex items-center justify-center">

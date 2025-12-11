@@ -18,7 +18,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-primary/10"
+              className="group bg-green-100 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-primary/10"
             >
               <a
                 href={project.website}
