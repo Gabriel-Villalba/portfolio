@@ -47,7 +47,7 @@ const Projects = () => {
                     href={project.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-steel-gray group-hover:text-primary transition-colors hover:scale-110"
+                    className="text-steel-gray  group-hover:text-primary transition-colors hover:scale-110"
                     title="Visitar sitio web"
                   >
                     <ExternalLink size={20} />

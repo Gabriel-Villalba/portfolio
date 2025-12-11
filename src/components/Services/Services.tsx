@@ -27,7 +27,7 @@ const Services = () => {
             return (
               <div
                 key={service.id}
-                className="group p-8 bg-primary/5 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20"
+                className="group p-8 bg-green-100 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-primary/20"
               >
                 <div className="w-14 h-14 bg-primary-dark rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                   <Icon className="text-white w-7 h-7 block" />

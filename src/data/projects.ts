@@ -16,7 +16,7 @@ export const projects: Project[] = [
   {
     id: '1',
     title: 'FavStore',
-    type: 'Catálogo sin carrito',
+    type: 'Catálogo',
     description: 'Sitio web para emprendimiento de parrillas portátiles. Muestra productos con imágenes, descripciones detalladas y precios, facilitando la consulta directa por WhatsApp.',
     image: favStoreImg,
     tags: ['React','TypeScript', 'TailwindCSS', 'Responsive'],
@@ -34,7 +34,7 @@ export const projects: Project[] = [
    {
     id: '3',
     title: 'Raffata Pizzas',
-    type: 'Juego online',
+    type: 'Catálogo',
     description: 'Landing page para Raffata Pizza. Incluye menú dinámico, galería, sección “Sobre nosotros” e integración con WhatsApp. Un proyecto centrado en diseño minimalista y performance, ideal para negocios gastronómicos.',
     image: raffataImg,
     tags: ['React', 'TailwindCSS','TypeScript', 'Responsive'],
