@@ -10,28 +10,15 @@ const Contact = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    
-    // Crear el mensaje para WhatsApp
+
     const whatsappMessage = `Hola, me llamo ${formData.name}. Mi correo es ${formData.email}. Tengo una consulta: ${formData.message}`;
-    
-    // Codificar el mensaje para la URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    
-    // Número de WhatsApp (sin signos especiales, solo dígitos con código de país)
     const whatsappNumber = '5493492588185';
-    
-    // Crear la URL de WhatsApp
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-    // Abrir WhatsApp en una nueva pestaña
+
     window.open(whatsappUrl, '_blank');
-    
-    // Limpiar el formulario
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+
+    setFormData({ name: '', email: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,73 +29,126 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-32 bg-white">
+    <section id="contact" className="py-12 md:py-32 bg-white dark:bg-bg-dark transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Title */}
         <div className="text-center mb-6 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-soft-black mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-soft-black dark:text-white mb-4">
             Contáctenos
           </h2>
-          <p className="text-lg text-steel-gray">
+          <p className="text-lg text-steel-gray dark:text-text-dark-muted">
             ¿Tenés un proyecto en mente? Hablemos sobre cómo puedo ayudarte
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="primary-dark rounded-2xl shadow-lg p-8 md:p-10 space-y-6 border border-primary/10">
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit}
+          className="
+            rounded-2xl p-8 md:p-10 space-y-6 
+            bg-bg-cardLight dark:bg-bg-cardDark
+            border border-primary/10 
+            shadow-lg transition-colors duration-300
+          "
+        >
+
+          {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-soft-black mb-2">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-soft-black dark:text-white mb-2"
+            >
               Nombre
             </label>
             <input
-              type="text"
               id="name"
               name="name"
+              type="text"
+              required
               value={formData.name}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary-dark focus:border-transparent transition-all outline-none"
               placeholder="Tu nombre completo"
+              className="
+                w-full px-4 py-3 rounded-lg outline-none
+                border border-primary/20 
+                bg-white dark:bg-bg-light
+                text-soft-black dark:text-text-dark
+                focus:ring-2 focus:ring-primary-light focus:border-transparent
+                transition-all
+              "
             />
           </div>
 
+          {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-soft-black mb-2">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-soft-black dark:text-white mb-2"
+            >
               Email
             </label>
             <input
-              type="email"
               id="email"
               name="email"
+              type="email"
+              required
               value={formData.email}
               onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary-dark focus:border-transparent transition-all outline-none"
               placeholder="tu@email.com"
+              className="
+                w-full px-4 py-3 rounded-lg outline-none
+                border border-primary/20 
+                bg-white dark:bg-bg-light
+                text-soft-black dark:text-text-dark
+                focus:ring-2 focus:ring-primary-light focus:border-transparent
+                transition-all
+              "
             />
           </div>
 
+          {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-soft-black mb-2">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-soft-black dark:text-white mb-2"
+            >
               Mensaje
             </label>
             <textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary-dark focus:border-transparent transition-all outline-none resize-none"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Contame sobre tu proyecto..."
+              className="
+                w-full px-4 py-3 rounded-lg outline-none resize-none
+                border border-primary/20 
+                bg-white dark:bg-bg-light
+                text-soft-black dark:text-text-dark
+                focus:ring-2 focus:ring-primary-light focus:border-transparent
+                transition-all
+              "
             />
           </div>
 
+          {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-primary-dark text-white px-8 py-4 rounded-lg hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl font-medium flex items-center justify-center gap-2"
+            className="
+              w-full bg-primary-dark dark:bg-primary text-white 
+              px-8 py-4 rounded-lg 
+              hover:bg-primary-light transition-all duration-300 
+              shadow-lg hover:shadow-xl 
+              font-medium flex items-center justify-center gap-2
+            "
           >
             Enviar mensaje
             <Send size={20} />
           </button>
+
         </form>
       </div>
     </section>

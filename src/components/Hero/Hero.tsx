@@ -50,7 +50,7 @@ const Hero = () => {
               className="
                 inline-flex items-center gap-2
                 bg-primary-dark dark:bg-primary
-                text-white dark:text-bg-dark
+                text-white dark:text-white
                 px-6 py-3 rounded-lg
                 hover:bg-primary dark:hover:bg-primary-light
                 transition-all duration-300

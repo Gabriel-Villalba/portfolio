@@ -3,7 +3,6 @@ import { services } from '../../data/services';
 
 type IconName = "globe" | "package" | "mail" | "rocket";
 
-
 const iconMap: Record<IconName, React.ElementType> = {
   globe: Globe,
   package: Package,
@@ -13,15 +12,15 @@ const iconMap: Record<IconName, React.ElementType> = {
 
 const Services = () => {
   return (
-    <section className="py-12 md:py-32 bg-white dark:bg-bg-dark">
+    <section className="py-12 md:py-32 bg-bg-light dark:bg-bg-dark transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* TÍTULO */}
         <div className="text-center mb-8 md:mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-soft-black dark:text-white mb-4">
             Servicios
           </h2>
-          <p className="text-lg text-steel-gray dark:text-text-dark-muted max-w-2xl mx-auto">
+          <p className="text-lg text-steel-gray dark:text-gray-300 max-w-2xl mx-auto">
             Ofrezco soluciones web adaptadas a las necesidades de tu emprendimiento
           </p>
         </div>
@@ -30,16 +29,16 @@ const Services = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service) => {
             const Icon = iconMap[service.icon];
+
             return (
               <div
                 key={service.id}
                 className="
                   group p-8 rounded-2xl 
-                  bg-white dark:bg-bg-light 
-                  hover:bg-primary-light 
-                  hover:shadow-xl 
-                  transition-all duration-300 
-                  border border-transparent hover:border-primary/20
+                  bg-bg-cardLight dark:bg-bg-cardDark 
+                  shadow-md hover:shadow-2xl 
+                  border border-primary/10 
+                  transition-all duration-300
                 "
               >
                 {/* Icono */}
@@ -53,14 +52,13 @@ const Services = () => {
                 </h3>
 
                 {/* Descripción */}
-                <p className="text-steel-gray dark:text-text-dark-muted leading-relaxed text-center">
+                <p className="text-steel-gray dark:text-gray-300 leading-relaxed text-center">
                   {service.description}
                 </p>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );
