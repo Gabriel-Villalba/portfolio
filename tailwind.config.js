@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,29 +9,29 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#4F46E5",
-          light: "#7480f1ff",
-          dark: "#3730A3",
+          DEFAULT: "#1E40AF",   // azul principal
+          light: "#3B82F6",
+          dark: "#1E3A8A",
         },
         accent: {
-          DEFAULT: "#22D3EE",
-          dark: "#0891B2",
+          DEFAULT: "#10B981",   // verde acento profesional
+          light: "#34D399",
+          dark: "#059669",
         },
         bg: {
-          DEFAULT: "#0F172A",
-          surface: "#1E293B",
-          surfaceLight: "#334155",
+          light: "#F9FAFB",
+          dark: "#0F172A",       // azul-negruzco (modo oscuro)
+          cardLight: "#FFFFFF",
+          cardDark: "#1E293B",
         },
         text: {
-          DEFAULT: "#F8FAFC",
-          muted: "#CBD5E1",
+          light: "#1E293B",
+          dark: "#F8FAFC",
+          mutedLight: "#64748B",
+          mutedDark: "#CBD5E1",
         },
-        success: "#10B981",
-        warning: "#F59E0B",
-        danger: "#EF4444",
       }
     },
   },
   plugins: [],
 }
-
