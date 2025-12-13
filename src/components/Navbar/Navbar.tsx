@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X} from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,10 @@ const Navbar = () => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.classList.toggle("dark", newTheme === "dark");
+    setIsOpen(false);
   };
+ 
+
 
   // ────────────────────────────────────────────────
   // Scroll suave
@@ -91,13 +94,9 @@ const Navbar = () => {
             {/* SWITCH DARK/LIGHT */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
-            >
-              {theme === "light" ? (
-                <Moon size={22} className="text-primary-dark" />
-              ) : (
-                <Sun size={22} className="text-yellow-400" />
-              )}
+              className="block w-full text-left px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary/5 dark:hover:bg-primary/10 rounded-lg transition-colors font-medium"
+              >
+             {theme === "light" ? "Modo oscuro 🌙" : "Modo claro ☀️"}
             </button>
           </div>
 
@@ -112,7 +111,7 @@ const Navbar = () => {
               ) : (
             <Menu size={24} className="text-soft-black dark:text-white" />
         )}
-</button>
+        </button>
         </div>
       </div>
 
@@ -136,6 +135,7 @@ const Navbar = () => {
           {/* DARK/LIGHT EN MOBILE */}
           <button
             onClick={toggleTheme}
+            
             className="block w-full text-left px-4 py-2 text-text-light dark:text-text-dark hover:bg-primary/5 dark:hover:bg-primary/10 rounded-lg transition-colors font-medium"
           >
             {theme === "light" ? "Modo oscuro 🌙" : "Modo claro ☀️"}
