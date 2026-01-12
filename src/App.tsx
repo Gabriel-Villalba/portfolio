@@ -1,7 +1,12 @@
 import Home from './pages/Home';
-
+import CustomCursor from "./components/customCursor/CustomCursor";
 function App() {
-  return <Home />;
+  return (
+    <>
+      <CustomCursor />
+      <Home />
+    </>
+  );
 }
 
 export default App;
