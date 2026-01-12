@@ -12,7 +12,12 @@ const iconMap: Record<IconName, React.ElementType> = {
 
 const Services = () => {
   return (
-    <section className="py-12 md:py-32 bg-bg-light dark:bg-bg-dark transition-colors">
+    <section className="
+    pt-0 md:pt-0
+    pb-12 md:pb-20
+    bg-bg-light dark:bg-bg-dark
+    transition-colors
+  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* TÍTULO */}

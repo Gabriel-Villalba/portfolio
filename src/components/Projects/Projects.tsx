@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-12 md:py-32 bg-bg-light dark:bg-bg-dark transition-colors"
+      className="bg-bg-light dark:bg-bg-dark transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

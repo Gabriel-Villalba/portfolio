@@ -20,7 +20,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-bg-light dark:bg-bg-dark transition-colors">
+    <section id="about" className="py-10 md:py-22 bg-bg-light dark:bg-bg-dark transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 

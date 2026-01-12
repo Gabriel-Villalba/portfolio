@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-32 bg-white dark:bg-bg-dark transition-colors duration-300">
+    <section id="contact" className=" bg-white dark:bg-bg-dark transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Title */}

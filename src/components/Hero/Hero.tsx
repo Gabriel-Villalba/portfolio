@@ -17,7 +17,7 @@ const Hero = () => {
         transition-colors duration-300
       "
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
           {/* TEXTOS */}

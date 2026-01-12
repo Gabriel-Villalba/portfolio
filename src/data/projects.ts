@@ -1,6 +1,7 @@
 import favStoreImg from '../assets/favStore.jpeg';
 import ahorcadoImg from '../assets/ahorcado.jpeg';
 import raffataImg from '../assets/RaffataImg.jpeg';
+import enBioImg from '../assets/enBio.jpeg';
 
 export interface Project {
   id: string;
@@ -39,5 +40,14 @@ export const projects: Project[] = [
     image: raffataImg,
     tags: ['React', 'TailwindCSS','TypeScript', 'Responsive'],
     website: 'https://raffata.vercel.app/'
+  },
+   {
+    id: '4',
+    title: 'EnBio',
+    type: 'Landing Page',
+    description: 'Sitio web institucional para bioinsumos agrícolas, destacando soluciones sustentables, productividad y cuidado del suelo.',
+    image: enBioImg,
+    tags: ['HTML5', 'TailwindCSS','JavaScript', 'Responsive'],
+    website: 'https://en-bio.vercel.app'
   }
 ];
