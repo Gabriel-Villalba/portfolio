@@ -12,7 +12,7 @@ const Hero = () => {
     <section
       id="hero"
       className="
-        py-12 md:py-20 flex items-center
+        py-20 md:py-20 flex items-center
         bg-bg-light dark:bg-bg-dark
         transition-colors duration-300
       "

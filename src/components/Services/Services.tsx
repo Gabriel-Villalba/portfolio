@@ -1,13 +1,15 @@
-import { Globe, Package, Mail, Rocket } from 'lucide-react';
+import { FaGlobe, FaBox, FaRocket, FaEnvelope } from "react-icons/fa";
+import { SiOpenai } from "react-icons/si";
 import { services } from '../../data/services';
 
-type IconName = "globe" | "package" | "mail" | "rocket";
+type IconName = "globe" | "package" | "mail" | "rocket"| "brain";
 
 const iconMap: Record<IconName, React.ElementType> = {
-  globe: Globe,
-  package: Package,
-  mail: Mail,
-  rocket: Rocket
+  globe:  FaGlobe,
+  package: FaBox,
+  mail: FaEnvelope,
+  rocket: FaRocket,
+  brain: SiOpenai,
 };
 
 const Services = () => {
@@ -33,7 +35,7 @@ const Services = () => {
         {/* CARDS */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service) => {
-            const Icon = iconMap[service.icon];
+           const Icon = iconMap[service.icon];
 
             return (
               <div
