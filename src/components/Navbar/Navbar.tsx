@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,15 +7,14 @@ const Navbar = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.toggle("dark", storedTheme === "dark");
-    }
+
+    // Init theme from localStorage, default light
+    const storedTheme = localStorage.getItem("theme") || "light";
+    setTheme(storedTheme);
+    document.documentElement.classList.toggle("dark", storedTheme === "dark");
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -41,6 +40,8 @@ const Navbar = () => {
     { label: 'Proyectos', id: 'projects' },
     { label: 'Contacto', id: 'contact' }
   ];
+
+  const isDark = theme === "dark";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500
@@ -77,22 +78,29 @@ const Navbar = () => {
                 {item.label}
               </button>
             ))}
+
+            {/* THEME TOGGLE — icon button */}
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 text-text-mutedLight dark:text-text-mutedDark text-base"
-              title="Cambiar tema"
+              aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+              title={isDark ? "Modo claro" : "Modo oscuro"}
+              className="w-9 h-9 rounded-full border border-black/12 dark:border-white/12 flex items-center justify-center text-text-mutedLight dark:text-text-mutedDark hover:border-primary hover:text-primary transition-all duration-200"
             >
-              {theme === "light" ? "○" : "●"}
+              {isDark
+                ? <Sun size={15} />
+                : <Moon size={15} />
+              }
             </button>
           </div>
 
-          {/* BOTÓN MOBILE */}
-          <div className="md:hidden flex items-center gap-3">
+          {/* MOBILE RIGHT */}
+          <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-full border border-black/10 dark:border-white/10 flex items-center justify-center text-text-mutedLight dark:text-text-mutedDark text-sm"
+              aria-label={isDark ? "Modo claro" : "Modo oscuro"}
+              className="w-9 h-9 rounded-full border border-black/12 dark:border-white/12 flex items-center justify-center text-text-mutedLight dark:text-text-mutedDark hover:border-primary hover:text-primary transition-all duration-200"
             >
-              {theme === "light" ? "○" : "●"}
+              {isDark ? <Sun size={15} /> : <Moon size={15} />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
